@@ -10,4 +10,24 @@ export interface IWeatherCard {
   country: string;
 }
 
-export interface IWeatherDataApiList {}
+export interface IWeatherDataApiList {
+  list: IWeatherDataApi[];
+}
+
+export interface IWeatherDataApi {
+  id: number;
+  name: string;
+  main: IMain;
+  weather: IWeather[];
+  sys: ISystem;
+}
+
+export interface IMain {
+  temp: number;
+}
+export interface IWeather {
+  icon: string;
+}
+export interface ISystem {
+  country: string;
+}
