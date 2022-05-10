@@ -8,7 +8,7 @@ import { WeatherDataService } from 'src/app/Core/services/weather-data.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  watherDataList: IWeatherCard[] = [];
+  weatherDataList: IWeatherCard[] = [];
   cityIDs: string[] = ['5809844', '4164138', '3128760'];
 
   constructor(private weatherDataService: WeatherDataService) {}
@@ -18,8 +18,8 @@ export class DashboardComponent implements OnInit {
       this.weatherDataService
         .getWeatherDataByIdsFromApi(this.cityIDs)
         .subscribe({
-          next: (weatherCardData: IWeatherCard[]) => {
-            console.log(weatherCardData);
+          next: (weatherCardDataArray: IWeatherCard[]) => {
+            this.weatherDataList = weatherCardDataArray;
           },
           error: (err) => {
             console.log(err);
@@ -29,6 +29,13 @@ export class DashboardComponent implements OnInit {
   }
 
   getWeatherDataBySearchValue(searchValue: string): void {
-    console.log(searchValue);
+    this.weatherDataService.getWeatherDataByCityName(searchValue).subscribe({
+      next: (weatherCardData: IWeatherCard) => {
+        this.weatherDataList = [weatherCardData];
+
+        //add to the list
+        //this.weatherDataList.push(weatherCardData);
+      },
+    });
   }
 }

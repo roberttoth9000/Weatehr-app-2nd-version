@@ -35,4 +35,22 @@ export class WeatherDataService {
         )
       );
   }
+
+  getWeatherDataByCityName(city: string): Observable<IWeatherCard> {
+    return this.http
+      .get<IWeatherDataApi>(
+        `${environment.url}weather?q=${city}&appid=${environment.APYkey}&units=metric`
+      )
+      .pipe(
+        map((response: IWeatherDataApi) => {
+          return {
+            id: response.id,
+            cityName: response.name,
+            tempriture: response.main.temp,
+            iconURL: `${environment.iconUrl}${response.weather[0].icon}@2x.png`,
+            country: response.sys.country,
+          };
+        })
+      );
+  }
 }

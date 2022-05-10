@@ -1,0 +1,8 @@
+<div class="weather-card">
+  <div>
+    <h3>{{ weatherData.cityName }}</h3>
+    <h2>{{ weatherData.country }}</h2>
+  </div>
+  <h3>{{ weatherData.tempriture | number: "1.0-0" }} ℃</h3>
+  <img [src]="weatherData.iconURL" />
+</div>

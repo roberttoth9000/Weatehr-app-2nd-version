@@ -12,8 +12,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, SearchComponent],
+  declarations: [AppComponent, DashboardComponent, SearchComponent, WeatherCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

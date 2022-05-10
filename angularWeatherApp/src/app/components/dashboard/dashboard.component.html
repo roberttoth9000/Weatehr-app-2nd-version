@@ -1,1 +1,5 @@
 <app-search (searchValue)="getWeatherDataBySearchValue($event)"></app-search>
+<app-weather-card
+  *ngFor="let weatherData of weatherDataList"
+  [weatherData]="weatherData"
+></app-weather-card>
