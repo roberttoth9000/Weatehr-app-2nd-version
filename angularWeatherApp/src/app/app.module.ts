@@ -13,8 +13,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { ForecastComponent } from './components/forecast/forecast.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, SearchComponent, WeatherCardComponent],
+  declarations: [AppComponent, DashboardComponent, SearchComponent, WeatherCardComponent, ForecastComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
