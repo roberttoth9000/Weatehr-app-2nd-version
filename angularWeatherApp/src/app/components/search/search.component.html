@@ -1,1 +1,10 @@
-<p>search works!</p>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="searchForm">
+  <mat-form-field class="searchFormField">
+    <span matPrefix></span>
+    <input type="text" matInput name="search" formControlName="searchInput" />
+    <button matSuffix mat-button [disabled]="!searchForm.valid">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  <br />
+</form>
