@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, DashboardComponent, SearchComponent],
   imports: [
@@ -22,6 +23,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatIconModule,
     NoopAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

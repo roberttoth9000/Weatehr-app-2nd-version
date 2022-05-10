@@ -9,3 +9,5 @@ export interface IWeatherCard {
   iconURL: string;
   country: string;
 }
+
+export interface IWeatherDataApiList {}
